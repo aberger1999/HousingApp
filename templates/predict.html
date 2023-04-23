@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your House Estimatated</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/model">Model</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Home Estimate</h1>
+    </header>
+    <main>
+        <div id="result-box">
+            {% if prediction is defined %}
+                <p>Predicted House Price: ${{ prediction }}</p>
+            {% endif %} 
+        </div>
+    </main>
+  </body>
+</html>

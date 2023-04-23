@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/model">Model</a></li>
+        </ul>
+      </nav>
+      <header>
+      <h1>Predict The Price</h1>
+    </header>
+    <form action="http://127.0.0.1:5000/predict" method="POST">
+      <div>
+        <label for="Lot Frontage">Lot Frontage:</label>
+        <input type="number" id="Lot Frontage" name="Lot Frontage">
+      </div>
+      <div>
+        <label for="Lot Area">Lot Area:</label>
+        <input type="number" id="Lot Area" name="Lot Area">
+      </div>
+      <div>
+        <label for="Lot Config">Lot Config:</label>
+        <select id="Lot Config" name="Lot Config">
+          <option value="Inside">Inside</option>
+          <option value="Corner">Corner</option>
+          <option value="CulDSac">Cul-De-Sac</option>
+          <option value="FR2">Flag Lot</option>
+          <option value="FR3">Key Lot</option>
+        </select>
+      </div>
+      <div>
+        <label for="Neighborhood">Neighborhood:</label>
+        <select id="Neighborhood" name="Neighborhood">
+          <option value="NAmes">North Ames</option>
+          <option value="IDOTRR">West Ames</option>
+          <option value="NWAmes">North West Ames</option>
+          <option value="Gilbert">Gilbert</option>
+          <option value="Edwards">Edwards</option>
+          <option value="Greens">Greens</option>
+          <option value="Somerst">Somerset</option>
+          <option value="Blmngtn">Bloomningtown</option>
+          <option value="Blueste">Blue Side</option>
+          <option value="Brkside">Break Side</option>
+          <option value="ClearCr">Clear Court</option>
+          <option value="CollgCr">College Court</option>
+          <option value="Crawfor">Crawford</option>
+          <option value="MeadowV">Meadow View</option>
+          <option value="Mitchel">Mitchel</option>
+          <option value="NPkVill">North Parkville</option>
+          <option value="NoRidge">NoRidge</option>
+          <option value="NridgHt">North Ridge Heights</option>
+          <option value="OldTown">Old Town</option>
+          <option value="SWISU">South West Ames</option>
+          <option value="Sawyer">Sawyer</option>
+          <option value="SawyerW">Sawyer West</option>
+          <option value="StoneBr">Stone Bridge</option>
+          <option value="Timber">Timber</option>
+          <option value="Veenker">Veenker</option>
+        </select>
+      </div>
+      <div>
+        <label for="Bldg Type">Building Type:</label>
+        <select id="Bldg Type" name="Bldg Type">
+          <option value="1Fam">One Family</option>
+          <option value="2fmCon">Two Family Connected</option>
+          <option value="Duplex">Duplex</option>
+          <option value="Twnhs">Twin House</option>
+          <option value="TwnhsE">Twin House End</option>
+        </select>
+      </div>
+      <div>
+        <label for="House Style">House Style:</label>
+        <select id="House Style" name="House Style">
+          <option value="1.5Fin">1.5 Finished</option>
+          <option value="1.5Unf">1.5 Unfinished</option>
+          <option value="1Story">One Story</option>
+          <option value="2.5Fin">2.5 Finished</option>
+          <option value="2.5Unf">2.5 Unfinished</option>
+          <option value="2Story">Two Story</option>
+          <option value="SLvl">SLvl</option>
+          <option value="SFoyer">SFoyer</option>
+        </select>
+      </div>
+      <div>
+        <label for="Overall Qual">Overall Quality:</label>
+        <select id="Overall Qual" name="Overall Qual">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div>
+        <label for="Overall Cond">Overall Condition:</label>
+        <select id="Overall Cond" name="Overall Cond">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <div>
+        <label for="Year Built">Year Built:</label>
+        <input type="number" id="Year Built" name="Year Built">
+      </div>
+      <div>
+        <label for="Foundation">Foundation:</label>
+        <select id="Foundation" name="Foundation">
+            <option value="BrkTil">Brick</option>
+            <option value="CBlock">Cinder Block</option>
+            <option value="PConc">Concrete</option>
+            <option value="Slab">Slabs</option>
+            <option value="Stone">Stone</option>
+            <option value="Wood">Wood</option>
+        </select>
+      </div>
+      <div>
+        <label for="BsmtFin SF 1">Finished Basement SQFT:</label>
+        <input type="number" id="BsmtFin SF 1" name="BsmtFin SF 1">
+      </div>
+      <div>
+        <label for="Bsmt Unf SF">Unfinished Basement SQFT:</label>
+        <input type="number" id="Bsmt Unf SF" name="Bsmt Unf SF">
+      </div>
+      <div>
+        <label for="Total Bsmt SF">Total Basement SQFT:</label>
+        <input type="number" id="Total Bsmt SF" name="Total Bsmt SF">
+      </div>
+      <div>
+        <label for="Central Air">Central Air:</label>
+        <select id="Central Air" name="Central Air">
+            <option value="Y">Yes</option>
+            <option value="N">No</option>
+        </select>
+      </div>
+      <div>
+        <label for="Gr Liv Area">Ground Living Area:</label>
+        <input type="number" id="Gr Liv Area" name="Gr Liv Area">
+      </div>
+      <div>
+        <label for="Full Bath">Full Baths:</label>
+        <select id="Full Bath" name="Full Bath">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+      </div>
+      <div>
+        <label for="Half Bath">Half Baths:</label>
+        <select id="Half Bath" name="Half Bath">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+      </div>
+      <div>
+        <label for="Bedroom AbvGr">Bedrooms:</label>
+        <select id="Bedroom AbvGr" name="Bedroom AbvGr">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+      </div>
+      <div>
+        <label for="Garage Cars">Garage Spots/Parking Spots:</label>
+        <select id="Garage Cars" name="Garage Cars">
+          <option value="0.0">0</option>
+          <option value="1.0">1</option>
+          <option value="2.0">2</option>
+          <option value="3.0">3</option>
+          <option value="4.0">4</option>
+          <option value="5.0">5</option>
+        </select>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
